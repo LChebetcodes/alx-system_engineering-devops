@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#This script lists the content of the current directory, displaying only the part of each filename after the first dash is displayed
+for file in *; do
+	if [[ -f "$file" ]]; then
+		name_after_dash="${file#*-}"
+		if [[ "$name_after_dash" != "$file" ]]; then
+			echo "$name_after_dash"
+		fi
+	fi
+done
